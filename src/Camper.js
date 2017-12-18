@@ -3,18 +3,17 @@ import PropTypes from "prop-types";
 
 const Camper = props =>
   <div className={props.index % 2 === 0 ? "even camper row" : "odd camper row"}>
-    <div className="camper-index camper-inner col-xs-1 text-center">
+    <div className="camper-index camper-inner text-center">
       {props.index}
-      
     </div>
-    <div className="camper-name camper-inner col-xs-5">
+    <div className="camper-name camper-inner">
       <img src={props.image} alt="Camper" width="40" height="40" className="camper-img"/>
-      {props.username}
+      <a href={`https://www.freecodecamp.org/${props.username}`} target="#">{props.username}</a>
     </div>
-    <div className="camper-recent camper-inner col-xs-3 text-center">
+    <div className="camper-recent camper-inner text-center">
       {props.recentPoints}
     </div>
-    <div className="camper-alltime col-xs-3 text-center">
+    <div className="camper-alltime text-center">
       {props.alltimePoints}
     </div>
   </div>
