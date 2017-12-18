@@ -1,0 +1,46 @@
+body {
+  margin: 30px;
+  font-family: sans-serif;
+}
+
+.camper {
+  height: 50px;
+  border-bottom: 2px solid lightgray;
+  border-left: 2px solid lightgray;
+  border-right: 2px solid lightgray;
+  padding: 5px;
+}
+
+.camper-inner {
+  height: 50px;
+  border-right: 2px solid lightgray;
+}
+
+.camper-img {
+  border: 2px solid green;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.even {
+  background-color: #f6f6f6;
+}
+
+.title {
+  background-color: green;
+  width: 100%;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+a {
+  color: green;
+}
+
+.first-row {
+  font-size: 18px;
+}
+
+.the-first-row {
+}
