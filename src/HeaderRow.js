@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
-export default class Firstrow extends Component {
+export default class HeaderRow extends Component {
 
   static propTypes = {
     setCampers: PropTypes.func.isRequired
@@ -15,8 +15,8 @@ export default class Firstrow extends Component {
 
   render() {
     return(
-      <div className="first-row">  
-        <div className="camper even row the-first-row">
+      <div className="header-row">  
+        <div className="camper even row">
           <div className="camper-index camper-inner text-center">
             #
           </div>

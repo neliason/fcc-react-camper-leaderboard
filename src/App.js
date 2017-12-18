@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import Camper from './Camper';
-import Firstrow from './Firstrow';
+import HeaderRow from './HeaderRow';
 import Title from './Title';
 
 class App extends Component {
@@ -55,7 +55,7 @@ class App extends Component {
       <div className="everything">
         <div className="board">
           <Title />
-          <Firstrow 
+          <HeaderRow 
             setCampers={this.setCampers} />
           <div className="campers">
             {this.state.campers.map(function(camper, index) {
