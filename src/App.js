@@ -64,7 +64,8 @@ class App extends Component {
                   image={camper.img}
                   recentPoints={camper.recent}
                   alltimePoints={camper.alltime}
-                  index={index+1} />
+                  index={index+1}
+                  key={index+1} />
               );
             })}
           </div>
