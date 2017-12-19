@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 export default class HeaderRow extends Component {
 
   static propTypes = {
-    setCampers: PropTypes.func.isRequired
+    setCampers: PropTypes.func.isRequired,
+    recentText: PropTypes.string.isRequired,
+    alltimeText: PropTypes.string.isRequired
   }
 
   setAllTime = () =>
@@ -20,14 +22,14 @@ export default class HeaderRow extends Component {
           <div className="camper-index camper-inner text-center">
             #
           </div>
-          <div className="camper-name camper-inner">
+          <div className="header-name camper-inner">
             Camper Name
           </div>
           <div className="camper-recent camper-inner text-center">
-            <a onClick={this.setRecent}>Points in past 30 days</a>
+            <a onClick={this.setRecent}>{this.props.recentText}</a>
           </div>
           <div className="camper-alltime text-center">
-            <a onClick={this.setAllTime}>All time points</a>
+            <a onClick={this.setAllTime}>{this.props.alltimeText}</a>
           </div>
         </div>
       </div>

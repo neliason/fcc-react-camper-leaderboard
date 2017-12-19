@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+
 import Camper from './Camper';
 import HeaderRow from './HeaderRow';
 import Title from './Title';
@@ -8,31 +9,27 @@ import Title from './Title';
 class App extends Component {
   
   state = {
-    campers: []
+    campers: [],
+    recentText: "Points in past 30 days▼",
+    alltimeText: "All time points"
   };
 
-  /*
-  static propTypes = {    
-    campers: PropTypes.arrayOf(PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      img: PropTypes.string.isRequired,
-      recent: PropTypes.number.isRequired,
-      alltime: PropTypes.number.isRequired,
-      lastUpdate: PropTypes.string.isRequired
-    }))
-  };*/
-
   setCampers = (recentOrAlltime) => {
+    let newRecentText = recentOrAlltime === "recent" ? "Points in past 30 days▼" : "Points in past 30 days"
+    let newAlltimeText = recentOrAlltime === "alltime" ? "All time points▼" : "All time points"
     let url = `https://fcctop100.herokuapp.com/api/fccusers/top/${recentOrAlltime}`
     axios.get(url)
     .then(res => {
       this.setState({
-        campers: res.data
+        campers: res.data,
+        recentText: newRecentText,
+        alltimeText: newAlltimeText
       });
     })
     .catch((error) => {
       console.log(error);
     });
+    
   }
 
   componentDidMount() {
@@ -56,7 +53,9 @@ class App extends Component {
         <div className="board">
           <Title />
           <HeaderRow 
-            setCampers={this.setCampers} />
+            setCampers={this.setCampers}
+            recentText={this.state.recentText}
+            alltimeText={this.state.alltimeText} />
           <div className="campers">
             {this.state.campers.map(function(camper, index) {
               return(
