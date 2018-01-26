@@ -1,1 +1,1 @@
-FreeCodeCamp Camper Leaderboard Project in React
+Camper Leaderboard Project in React
